@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head><title>SIGN-UP form</title>
+    <link rel="stylesheet"  href="signstyle.css">
+<script> 
+function VALIDATE()
+{var pd=document.RegForm.t3.value;
+var cpd=document.RegForm.t4.value;
+if(pd!=cpd)
+{
+    alert("Password doesn't match...");
+    return false;
+   }
+   var Email=document.RegForm.Email.value;
+   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(Email.match(mailformat))
+{
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+return false;
+}
+}
+                 
+ </script>   
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Admin Sign-up</h2>
+    <form name="RegForm" action="Success.html" method="post" onsubmit="return VALIDATE()" >
+
+        <div class="inputBox">
+            <input type="text" name="" required ="">
+            <label>Username</label>
+        </div>
+        <div class="inputBox">
+            <input type="text" name="Email" id="ipl" required ="" >
+            <label>Email</label>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="t3" minlength="5" maxlength="12" required ="">
+            <label>Password</label>
+        </div>
+        <div class="inputBox">
+            <input type="password" name="t4" minlength="5" maxlength="12" required ="">
+            <label>Confirm Password</label>
+        </div>
+        <input type="submit" name="Submit" value="Submit" >
+    </form>
+</div>
+
+</body>
+</html>
